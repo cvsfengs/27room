@@ -1,0 +1,148 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.0.0.RELEASE</version>
+  </parent>
+
+  <groupId>com.27room.springboot</groupId>
+  <artifactId>27room</artifactId>
+  <packaging>war</packaging>
+  <version>1.0.0-SNAPSHOT</version>
+
+  <name>27room</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <com.spring.boot.version></com.spring.boot.version>
+    <org.projectlombok.lombok>1.16.20</org.projectlombok.lombok>
+  </properties>
+  <dependencies>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+    <!--独立部署到tomcat-->
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${org.projectlombok.lombok}</version>
+    </dependency>
+
+  </dependencies>
+
+  <!--<profiles>
+    <profile>
+      <id>develop</id>
+      <properties>
+        <env>develop</env>
+      </properties>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+
+    <profile>
+      <id>test</id>
+      <properties>
+        <env>test</env>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>product</id>
+      <properties>
+        <env>product</env>
+      </properties>
+    </profile>
+
+    <profile>
+      <id>enterprise</id>
+      <properties>
+        <env>enterprise</env>
+      </properties>
+    </profile>
+
+  </profiles>-->
+
+  <build>
+    <finalName>27room</finalName>
+
+    <!--<filters>
+      <filter>src/main/filters/${env}.properties</filter>
+    </filters>-->
+    <!--扫描resources下所有配置文件-->
+    <!--<resources>
+      <resource>
+        <filtering>true</filtering>
+        <directory>coreservice/src/main/resources</directory>
+      </resource>
+    </resources>-->
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>2.1.1</version>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+      </plugin>
+      <!-- generate java doc -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.9.1</version>
+        <configuration>
+          <javadocDirectory>target/javadoc</javadocDirectory>
+          <reportOutputDirectory>target/javadoc</reportOutputDirectory>
+          <charset>UTF-8</charset>
+          <encoding>UTF-8</encoding>
+          <docencoding>UTF-8</docencoding>
+          <show>private</show>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonarsource.scanner.maven</groupId>
+        <artifactId>sonar-maven-plugin</artifactId>
+        <version>3.0</version>
+      </plugin>
+
+    </plugins>
+
+  </build>
+  <!--<distributionManagement>
+    <repository>
+      <id>nexus-releases</id>
+      <name>project release repository</name>
+      <url>http://nexus.27room.com:8081/nexus/content/repositories/releases</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-snapshots</id>
+      <name>project snapshot repository</name>
+      <url>http://nexus.27room.com:8081/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>-->
+  <modules>
+    <!--<module>roombase</module>-->
+<!--
+    <module>coreservice</module>
+-->
+  </modules>
+
+</project>
